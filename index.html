@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Icecrusher</title>
+
+    <script src="js/libs/three.js"></script>
+    <script src="js/libs/jquery-3.1.1.min.js"></script>
+
+    <!-- loaders --->
+    <script src="js/loaders/DDSLoader.js"></script>
+    <script src="js/loaders/MTLLoader.js"></script>
+    <script src="js/loaders/OBJMTLLoader.js"></script>
+    <script src="js/loaders/OBJLoader.js"></script>
+
+    <!-- controls --->
+    <script src="js/libs/PointerLockControls.js"></script>
+    <script src="js/classes/ControlImplementation.js"></script>
+
+    <script src="js/libs/ImprovedNoise.js"></script>
+    <script src="js/libs/Detector.js"></script>
+    <script src="js/libs/stats.min.js"></script>
+
+    <script src="js/shaders/CopyShader.js"></script>
+    <script src="js/shaders/ConvolutionShader.js"></script>
+
+    <script src="js/postprocessing/EffectComposer.js"></script>
+    <script src="js/postprocessing/RenderPass.js"></script>
+    <script src="js/postprocessing/ShaderPass.js"></script>
+    <script src="js/postprocessing/MaskPass.js"></script>
+    <script src="js/postprocessing/BloomPass.js"></script>
+
+    <script src="js/libs/cannon.min.js"></script>
+
+    <script src="js/libs/ImageHelpers.js"></script>
+    <script src="js/libs/MathHelpers.js"></script>
+    <script src="js/libs/Tools.js"></script>
+
+    <script src="js/libs/CanvasRenderer.js"></script>
+
+
+
+    <!-- classes / app --->
+    <script type="text/javascript" src="js/classes/icecube.js"></script>
+    <script type="text/javascript" src="js/classes/terrain.js"></script>
+    <script type="text/javascript" src="js/classes/snow.js"></script>
+    <script type="text/javascript" src="js/classes/hands.js"></script>
+    <script type="text/javascript" src="js/classes/skybox.js"></script>
+
+    <script type="text/javascript" src="js/classes/explosion.js"></script>
+    <script type="text/javascript" src="js/classes/light.js"></script>
+    <script type="text/javascript" src="js/classes/lava.js"></script>
+    <script type="text/javascript" src="js/app.js"></script>
+
+    <link rel="stylesheet" href="//brick.a.ssl.fastly.net/Source+Sans+Pro:400">
+    <link rel="stylesheet" type="text/css" href="css/stil.css">
+    <script type="text/javascript" src="js/libs/prefixfree.min.js"></script>
+
+</head>
+<body>
+
+<div id="blocker">
+
+    <div id="instructions">
+
+        <div><img src="css/logo2.png">
+           <!-- <span style="font-size:40px">Trykk for å spille</span>-->
+            <br />
+            (W, A, S, D = Beveg, SPACE = Hopp, MUS = Se deg rundt)
+            <br />
+            Kast snøballer ved å holde inne venstre museknapp</div>
+
+    </div>
+
+</div>
+
+<script>
+    window.onload = () => {
+        let app = new App();
+    }
+</script>
+
+
+<div id="container"></div>
+
+<div id="poeng">0</div>
+<div class="animated shotvelocity-wrap shotvelocity" data-progress-percent="25">
+    <div class=" shotvelocity-bar shotvelocity"></div>
+</div>
+
+
+
+
+
+
+<div id="ferdig"></div>
+
+<img src="textures/particle_snow.png" id="particle_snow" hidden/>
+<img src="textures/mountain_heightmap2.png" id="heightmap" hidden/>
+</body>
+</html>

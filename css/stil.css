@@ -1,0 +1,91 @@
+
+body { background: #333; color: #1c79ba; font-family: "Source Sans Pro", sans-serif;}
+
+
+
+#blocker {  position: absolute; width: 100%; height: 100%;  background-color: rgba(255,255,255, 0.5);   }
+#instructions { width: 100%; height: 100%;    display: box;  box-orient: horizontal;  box-pack: center;  box-align: center;  color: #1c79ba;  text-align: center;  cursor: pointer;  }
+#instructions > div { width:100%;text-align:center; font-size:22px;}
+#instructions > div > img {  max-width: 100%; height: auto; clear:both; display:block; margin: 0 auto; margin-bottom:25px;}
+.anim {   }
+#hit, #miss { display: block; animation-duration: 1.5s;  animation-name: poengAnimasjon;  opacity: 0; font-size:42px;  position: absolute;  top: 25%;  left: 40%}
+#hit { color: lightgreen; }
+#miss { color: red;}
+#poeng { position: absolute; right: 10px; top: 20px; font-size: 80px; color: yellow;}
+#ferdig { display: none; position: absolute; right: 0; top: 0; left: 0; bottom: 0; background:rgba(11, 34, 61, 0.6); color: #fff; text-align: center; padding-top: 25%; text-align:center; font-size: 40px;}
+
+.animated {
+    -webkit-animation-duration: 0.5s;
+    animation-duration: 0.5s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+
+.shotvelocity {
+    width: 100%;
+    height: 50px;
+
+}
+.shotvelocity-wrap {
+    border-radius: 50px;
+    display: none;
+    background: #1f3455;
+    left: 50%;
+    transform: translateX(-50%);
+    overflow: hidden;
+    position: absolute;
+    top: 10%;
+
+    width:50%;
+
+}
+.shotvelocity-bar {
+    background: #fff;
+    left: 0;
+    position: absolute;
+    top: 0;
+
+}
+
+
+@keyframes pulse {
+    from {
+        -webkit-transform: scale3d(1, 1, 1);
+        transform: scale3d(1, 1, 1);
+    }
+
+    50% {
+        -webkit-transform: scale3d(1.05, 1.05, 1.05);
+        transform: scale3d(1.05, 1.05, 1.05);
+    }
+
+    to {
+        -webkit-transform: scale3d(1, 1, 1);
+        transform: scale3d(1, 1, 1);
+    }
+}
+
+.pulse {
+    -webkit-animation-name: pulse;
+    animation-name: pulse;
+}
+
+
+@keyframes poengAnimasjon {
+    from {
+        transform: scale3d(1, 1, 1);
+        opacity: 1;
+    }
+
+    50% {
+
+        transform: scale3d(4, 4, 4);
+        opacity: 0.5;
+    }
+
+    to {
+        transform: scale3d(20, 20, 20);
+        opacity: 0;
+    }
+}
+
